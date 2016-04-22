@@ -1,5 +1,5 @@
 # Edge-based-Segmentation
-This is the implementation of a robust method for an segmentation based on edges
+This is the implementation of a robust method for a segmentation based on edges
 
 
 ## Demo
