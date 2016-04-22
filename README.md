@@ -24,5 +24,5 @@ You need to install Scilab first. Then :
 	
 	initialization : to be determined thanks to the matrix of the picture in IMLAB
 	INF : you should put about 100 and you can adjust it afterwards
-	bruit : see previous step
+	noise : see previous step
 	sigma : see previous step
