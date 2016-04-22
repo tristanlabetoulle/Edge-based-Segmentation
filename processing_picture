@@ -1,0 +1,23 @@
+function processing_picture(picture,bruit,sigma)
+    //Permet de visualiser et de régler les paramètres du filtre de Gauss et de la vitesse
+    picture=im2double(picture)
+    size2=size(picture)
+    map=zeros(size2(1),size2(2))
+
+    filter=fspecial('gaussian',[size2(1),size2(2)],bruit)
+    picture=imfilter(picture,filter)
+    filter=fspecial('sobel')
+    pictureh=imfilter(picture,filter)
+    picturev=imfilter(picture,filter.')
+    picture=sqrt(pictureh.^2+picturev.^2)
+    for i=2:size2(1)-1
+        for j=2:size2(2)-1
+            map(i,j)=exp(-(picture(i,j)/(2*sigma))^2)
+        end
+    end
+    imshow(map)
+endfunction
+
+//Application de la fonction à une IRM
+picture=imread('C:\im_segmentation\femur_patient.jpg');
+processing_picture(picture,3,0.1)
